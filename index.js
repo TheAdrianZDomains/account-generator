@@ -1,6 +1,6 @@
 const Discord = require("discord.js");
 const bot = new Discord.Client();
-const prefix = "/";
+const prefix = "!";
 var fs = require("fs");
 var lineReader = require("line-reader");
 var async = require("async");
@@ -24,7 +24,7 @@ bot.on("ready", () => {
 });
 
 bot.on("message", message => {
-    if (message.channel.id === "Channel_ID") { //This will make the bot work only in that channel
+    if (message.channel.id === "721278195071976027") { //This will make the bot work only in that channel
         if (message.author.bot) return;
             var command = message.content
             .toLowerCase()
@@ -65,7 +65,7 @@ bot.on("message", message => {
                                     footer: {
                                         icon_url:
                                             "https://cdn.discordapp.com/avatars/530778425540083723/7a05e4dd16825d47b6cdfb02b92d26a5.png",
-                                        text: "Buy discord bots from Silvano#8106"
+                                        text: "DM CoolCoderYT™#5875 for custom Bots"
                                     },
                                     thumbnail: {
                                         url:
@@ -83,14 +83,14 @@ bot.on("message", message => {
                                 setTimeout(() => {
                                     // Removes the user from the set after a minute
                                     generated.delete(message.author.id);
-                                }, 150000);
+                                }, 25000);
                                 if (err) {
                                     console.log(err);
                                 }
                             });
                         } else {
                             message.channel.send(
-                                "Sorry, there isn't any account available for that service!"
+                                "Sorry, this Service is currently out of Stock"
                             );
                         }
                     } else {
@@ -104,6 +104,7 @@ bot.on("message", message => {
         else
             if (command === "stats") {
                 message.channel.send(`Total users: ${bot.users.size}`)
+                message.channel.send(`Total Servers: ${bot.servers.size}`)
             }
 
      if (command === "add") {
@@ -144,7 +145,7 @@ bot.on("message", message => {
                     "Please, specify the service you want to restock!"
                 );
             message.channel.send(
-                "@everyone " +
+                "@Premium " +
                 "**" +
                 args[0] +
                 "**" +
